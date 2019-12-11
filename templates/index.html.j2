@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <title>carousel</title>
+    <script src="carousel.js"></script>
+    <script src="statics/refresh.js"></script>
+    <link rel="stylesheet" href="statics/style.css">
+    <script>refreshAt(21,0,0);</script>
+</head>
+    <body>
+        {% for f in files -%}
+            {% if loop.index0 == 0 -%}
+                {% set display = "block" -%}
+            {% else -%}
+                {% set display = "none" -%}
+            {% endif -%}
+        <img id="img{{loop.index0}}" src="{{f}}" style="display: {{display}}">
+        {% endfor %}
+    </body>
+</html>

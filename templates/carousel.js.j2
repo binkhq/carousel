@@ -1,0 +1,19 @@
+const IMAGE_COUNT = {{ count }};
+const INTERVAL_SECONDS = 45;
+var current = 0;
+
+function hide_image(idx) {
+    document.getElementById("img" + idx).style.display = "none";
+}
+
+function show_image(idx) {
+    document.getElementById("img" + idx).style.display = "block";
+}
+
+function next() {
+    hide_image(current);
+    current = (current + 1) % IMAGE_COUNT;
+    show_image(current);
+}
+
+setInterval(next, INTERVAL_SECONDS * 1000);
